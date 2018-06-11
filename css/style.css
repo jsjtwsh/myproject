@@ -1,0 +1,1116 @@
+*{
+    list-style:none;
+    text-decoration:none;
+}
+body{
+    font-family: "Archivo Narrow", sans-serif;
+    background:#fff;
+}
+div.container{
+    width:1200px;
+    margin:0 auto;
+}
+/**********************************首页****************************************************/
+/*************导航条********************/
+#nav{
+    display:flex;
+    height:90px;
+    line-height:90px;
+    position: relative;
+}
+    /* 导航条左 */
+#nav div.left{
+    width:25%;
+}
+
+#nav div.left img{
+    height:50px;
+    vertical-align: middle;
+}
+    /* 导航条中 */
+#nav div.center{
+    width:50%;
+}
+#nav div.center>ul{
+    display: flex;
+}
+#nav div.center>ul>li {
+    width:20%;
+    text-align: center; 
+    font-weight: bold;
+}
+#nav div.center>ul>li>a{
+     color:black;
+     padding:0;
+     border-radius:15px;
+     transition:all 0.2s linear;
+}
+    /*导航条右侧*/
+#nav div.right{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    width:25%;
+    line-height: 90px;
+    align-items: center;
+}
+#nav div.right div.reg{
+    margin-right:30px;
+}
+#nav div.right div.reg span a{
+     color:black;
+     font-size:16px;
+}
+
+#nav .car {
+    position:relative;
+}
+
+#nav div.right div.car>a>img{
+    position:relative;
+    margin-top:30px;
+    padding:15px;
+    border-radius: 50%;
+    background: black;
+    transition:all .3s linear;
+}
+#nav .right .car :hover img{
+    background:#ad3a59;
+}
+#nav div.right  span.number{
+    position: absolute;
+    width:20px;
+    height:20px;
+    line-height: 20px;
+    border-radius: 50%;
+    background: #2ac37d;
+    top:10px;
+    right:-3px;
+    text-align: center;
+    z-index:10;
+}
+/*购物车*/
+.cart-listing{
+    position: absolute;
+    top: 80%;
+    right: 0;
+    width: 300px;
+    background-color: #313645;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(50%);
+}
+
+.cart-content{
+    padding-top: 10px;
+}
+.cart-item{
+    /*box-sizing: border-box;*/
+    position: relative;
+    padding:15px 10px;
+    height:64px;
+    border-bottom:1px solid #525a71;
+}
+.cart-close{
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    width: 16px;
+    height: 16px;
+    background-color: #999;
+    border-radius: 50%;
+    z-index: 1000;
+}
+.cart-close:hover{
+    background-color: red;
+}
+.cart-item-img{
+    display: block;
+    position: relative;
+    float: left;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+}
+.cart-item-img>a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.cart-item-img img{
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    transition: all 0.4s ease;
+}
+.cart-item-content{
+    float: left;
+    width: calc(100% - 75px);
+    padding-left: 15px;
+}
+.cart-item-content>.cart-item-title{
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    text-align: left;
+    color: #fff;
+}
+.cart-item-content p{
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #999;
+}
+.cart-item-content p span{
+    margin-right:14px;
+}
+.cart-item-content p i{
+    font-style: normal;
+    color: #fff;
+    margin-left: 8px;
+}
+.cart-total{
+    padding:15px;
+    border-top:1px solid #525a71;
+}
+.cart-total p{
+    text-align:left;
+    font-family: "Montserrat", sans-serif;
+    font-size:16px;
+    color:#fff;
+    line-height:1.5em;
+    margin-bottom: 10px;
+}
+.cart-total p span{
+    float: right;
+    font-weight: 600;
+    letter-spacing: .05em;
+}
+.cart-footer {
+    line-height: 1em;
+}
+.cart-footer a.cart-btn{
+    box-sizing: border-box;
+    width:300px;
+    font-weight: 700;
+    text-align:center;
+    display: inline-block;
+    padding: 15px 30px;
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 18px;
+    letter-spacing: .1em;
+    color: #fff;
+    background-color: #2AC37D;
+    line-height: 25px;
+    transition: all 0.4s ease;
+}
+div.car:hover .cart-listing{
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+    /*下拉框*/
+#nav div.center>ul.nav-list>li>a:hover  {
+   background:#2ac37d;
+   padding:5px 10px;
+   color:#fff;
+}
+/**********悬停显示块**********************/
+#nav div.mega-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-30px);
+    z-index: 1000;
+    border-top: 1px solid #d8d8d8;
+    background-color: #fff;
+    transition: all .3s linear;
+    visibility: hidden;
+    opacity: 0;  
+}
+#nav .nav-list .mega-menu .mega-wrap{
+    display:flex;
+    padding:35px 30px;
+    text-align: left;
+}
+#nav .nav-list .mega-menu .mega-wrap .mega-column{
+    width:20%; 
+    padding:0 30px;
+    border-right: 1px solid #d8d8d8;
+}
+#nav .nav-list .mega-menu .mega-wrap .mega-column:last-child{
+    border-right: none;
+}
+#nav .nav-list .mega-menu .mega-wrap .mega-column .mega-features>li{
+  
+    line-height: 38px;
+   box-sizing: border-box;
+    margin-bottom: 0;
+}
+.mega-menu .mega-item a{
+    display: block;
+    padding:5px 0;
+    position: relative;
+    font-size:14px;
+    color:#1d1d1d;
+    font-weight: 400;
+}
+
+    /* li行高重定义*/
+.mega-menu .mega-item li a{
+    line-height: 30px;
+}
+
+#nav .nav-list .mega-menu .mega-wrap .mega-column .mega-features li a{
+   font-size: 16px;
+   font-weight: 700;
+   line-height: 1.8em;
+    color:#1d1d1d;
+    text-transform: uppercase;
+    
+}
+#nav .nav-list .mega-menu .mega-wrap .mega-column li a{
+     transition: all .3s linear;
+}
+#nav .nav-list .mega-menu .mega-wrap .mega-column .mega-heading{
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-weight: 700;
+    margin-top:10px;
+    font-size: 16px;
+    line-height: 1.8em;
+    color:#1d1d1d;
+    text-transform: uppercase;
+}
+    /**文字前短横线**/
+.mega-menu .mega-item a:before{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: #2AC37D;
+    transition: all 0.3s ease;
+}
+.mega-menu .mega-item a:hover {
+    padding-left: 25px;
+    color: #2AC37D; 
+}
+.mega-menu .mega-item a:hover:before {
+    width: 20px;
+}
+#nav .center .nav-list >li:hover .mega-menu{
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+}
+
+/*轮播*/
+.banner{
+    position: relative;
+    margin-top:10px;
+    padding-top: 40%;
+    overflow: hidden;
+}
+.banner-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.banner-wrapper .hiSlider-wrap, .banner-wrapper .hiSlider-wrap .hiSlider, .hiSlider li{
+    height:100%;
+}
+.banner-wrapper .hiSlider-wrap .hiSlider-pages{
+    right: 50%;
+    transform: translateX(50%);
+}
+.hiSlider-pages a{
+    border: 2px solid #fff;
+    padding: 2px;
+    background-color: transparent;
+}
+.hiSlider-pages a.active{
+    background-color: #fff;
+}
+.banner-wrapper .hiSlider-wrap .hiSlider li
+.image-wrapper{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+.banner .banner-wrapper .image-wrapper img{
+    height: 100%;
+    /* transform: translate(-12%, -8%); */
+}
+.banner .intro{
+    position: absolute;
+    top:33px;
+    left:115px;
+    color:#fff;
+}
+.banner .text-color{
+    color: black;
+}
+.banner .intro .banner-p1{
+    /*display:block;*/
+    width:300px;
+    height:72px;
+    font-size:24px;
+    line-height: 36px;
+    text-align: left;
+    padding-bottom:10px;
+}
+.banner .intro .hr{
+    width:150px;
+    border-top:2px solid #fff;
+    /*padding-bottom: 10px;  */
+}
+.banner .text-color .hr{
+    border-top:2px solid #1d1d1d;
+}
+.banner .banner-p2{
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    line-height: 108px;
+    box-sizing: border-box;  
+}
+.banner .text-color .banner-p2{
+    color: #ec4c76;
+}
+div.banner .banner-p3{
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4em;
+    font-family: "monterrat";
+    margin-bottom: 30px;
+}
+div.banner div.btn{
+    height:55px;
+}
+.btn a{
+    position: relative;
+    display: inline-block;
+    padding: 16px 8px;
+    font-family: "Archivo Narrow", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #fff;
+    background-color: #2AC37D;
+    line-height: 25px;
+    border: none;
+    border-radius: 60px;
+    transition: all 0.4s ease;
+    margin-right:25px;
+}
+.btn a:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 60px;
+    transition: all 0.4s ease;
+}
+.btn a:hover{
+    background-color: #50CF96;
+    color: #fff;
+}
+/********商品列表*****/
+    /*******导航条******/
+div.productList{
+    padding-top:100px ;
+    width:1200px;
+    margin:0 auto;
+    position: relative;
+}
+.bg{
+    font-size:90px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    color:#F4F4F4;  
+}
+.product-nav{
+    margin-bottom:50px;
+    position:relative;  
+}
+ .bg-font{
+    position: absolute;
+    top:27px;
+    font-size: 20px;
+    left:5px;
+}
+ .bg-font i{
+    font-size:30px;
+}
+div.product-nav .bg-list ul{
+    display: flex;
+    float:right;
+}
+div.product-nav .bg-list ul li{
+    margin-right: 50px;  
+}
+div.product-nav .bg-list ul .KIDS{
+    margin-right: 0;  
+}
+
+div.product-nav .bg-list ul li a{
+    font-size:16px;
+    font-weight: 700;
+    color:#987e7e;
+    text-transform: uppercase;
+}
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    top: -0.5em;
+}
+     /*******内容******/
+
+.shoe-all{
+    box-sizing: border-box;
+    display:flex;
+    flex-wrap: wrap;
+    height: 410px;
+}
+
+.shoe-all .shoe-session{
+    width:25%;
+    box-sizing: border-box;
+}
+.shoe-all .shoe-session .shoe-masorry{
+    margin-right: 15px;
+    
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item{
+    position: relative;
+    box-sizing: border-box;
+    margin-right:15px;
+    top:15px;
+    right:15px;
+    bottom:15px;
+    left:15px;
+    border: 1px solid transparent;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item:before{
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: calc(100% + 30px);
+    height: calc(100% + 10px);
+    border: 1px solid #000;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.8, 0.8);
+    transition: all 0.2s ease;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item:hover:before{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1, 1);
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .shoe-wrapper{
+    margin-bottom:-67px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all .4s linear;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item:hover .shoe-wrapper{
+    margin-bottom: 0px
+}
+.shoe-all  .shoe-session .shoe-masorry .shoe-item .shoe-wrapper  img{
+    width:100%;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .shoe-wrapper .shoe-new{
+    display: inline-block;
+    position:absolute;
+    box-sizing: border-box;
+    top:0;
+    left:0;
+    width:80px;
+    height:35px;
+    background-color:#2ac37d;
+    z-index: 10;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .shoe-wrapper .shoe-new span{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform: translate(-50%,50%);
+    font-size: 16px;
+    font-weight: 500;
+    color:#efefef;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .shoe-wrapper .shoe-reduce{
+    display: inline-block;
+    position:absolute;
+    box-sizing: border-box;
+    top:50px;
+    left:0;
+    width:80px;
+    height:35px;
+    background-color:#cf5050;
+    z-index: 10;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .shoe-wrapper .shoe-reduce span{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform: translate(-50%,50%);
+    font-size: 16px;
+    font-weight: 500;
+    color:#efefef;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .shoe-wrapper .shoe-overplay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    z-index: 10;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .shoe-pic-list{
+   box-sizing: border-box;
+   display: block;
+   padding: 10px 0 0 ;
+   z-index: 1000;
+   overflow: hidden;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .shoe-pic-list .shoe-pic{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .shoe-pic-list .shoe-pic li{
+    box-sizing: border-box;
+    width:25%;
+    height:25%;
+    margin-right: 20px;  
+    padding: 10px 0px 10px 10px;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .shoe-pic-list .shoe-pic li img{
+    width:100%
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .price{
+    position: relative;
+    margin-bottom: 0;
+    min-height: 60px;
+    background-color: #fff;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .price>a{
+    font-size: 16px;
+    font-weight: 700;
+    color:#5b5b5b;
+    line-height: 1.4em;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .price>p>a{
+    margin-bottom:0;
+    font-size: 14px;
+    line-height: 1.5em;
+    color:#999;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .price>span{
+    position: absolute;
+    display: inline-block;
+    top:5px;
+    right:0px;
+    font-size: 18px;
+    color:#5b5b5b;
+}
+.shoe-all .shoe-session .shoe-masorry .shoe-item .price>span>del{
+    text-decoration: line-through;
+    color:#bcbcbc;
+}
+/*人物图片*/
+.session-offer{
+    display:flex;
+    flex-wrap: nowrap;
+    margin-top:20px;
+    margin-bottom: 80px;
+}
+.session-offer .runner{
+    position: relative;
+    width:50%;
+    overflow: hidden;
+}
+.session-offer .runner img{
+    width:100%;
+    transition: all 0.4s ease;
+    transform: scale3d(1.05, 1.05, 1);
+}
+.offer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -120%, 0);
+    transition: all 0.6s ease;
+}
+.offer:hover:before {
+    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 120%, 0);
+}
+.offer:hover{
+    transform: scale(0.9);
+}
+/*热销轮播*/
+.product-list{
+    margin-left:150px !important;
+}
+.bg-list{
+    margin-left:315px ;
+}
+.bg-list ul li a{
+    transition: all 0.4s linear;
+}
+.product-nav .bg-list ul li a:hover{
+    cursor: pointer;
+    color:#2AC37D;
+}
+
+.bast-banner{
+    width:1200px;
+    height: 500px;
+    overflow:hidden;
+}
+.bast{
+    margin-top:80px;
+    display:flex;
+    flex-wrap:nowrap;
+    width:1500px;
+    margin-bottom: -50px
+}
+.bast .shoe-session{
+    width: 298px;
+    box-sizing: border-box;
+}
+.bast .shoe-session .shoe-masorry{
+    margin-right: 15px;
+    
+}
+.bast .shoe-session .shoe-masorry .shoe-item{
+    position: relative;
+    box-sizing: border-box;
+    margin-right:15px;
+    top:15px;
+    right:15px;
+    bottom:15px;
+    left:15px;
+    border: 1px solid transparent;
+}
+.bast .shoe-session .shoe-masorry .shoe-item:before{
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: calc(100% + 30px);
+    height: calc(100% + 10px);
+    border: 1px solid #000;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.8, 0.8);
+    transition: all 0.2s ease;
+}
+.bast .shoe-session .shoe-masorry .shoe-item:hover:before{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1, 1);
+}
+.bast .shoe-session .shoe-masorry .shoe-item .shoe-wrapper{
+    margin-bottom:-67px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all .4s linear;
+}
+.bast .shoe-session .shoe-masorry .shoe-item:hover .shoe-wrapper{
+    margin-bottom: 0px
+}
+.bast  .shoe-session .shoe-masorry .shoe-item .shoe-wrapper  img{
+    width:100%;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .shoe-wrapper .shoe-new{
+    display: inline-block;
+    position:absolute;
+    box-sizing: border-box;
+    top:0;
+    left:0;
+    width:80px;
+    height:35px;
+    background-color:#2ac37d;
+    z-index: 10;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .shoe-wrapper .shoe-new span{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform: translate(-50%,50%);
+    font-size: 16px;
+    font-weight: 500;
+    color:#efefef;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .shoe-wrapper .shoe-reduce{
+    display: inline-block;
+    position:absolute;
+    box-sizing: border-box;
+    top:50px;
+    left:0;
+    width:80px;
+    height:35px;
+    background-color:#cf5050;
+    z-index: 10;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .shoe-wrapper .shoe-reduce span{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform: translate(-50%,50%);
+    font-size: 16px;
+    font-weight: 500;
+    color:#efefef;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .shoe-wrapper .shoe-overplay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    z-index: 10;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .shoe-pic-list{
+   box-sizing: border-box;
+   display: block;
+   padding: 10px 0 0 ;
+   z-index: 1000;
+   overflow: hidden;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .shoe-pic-list .shoe-pic{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .shoe-pic-list .shoe-pic li{
+    box-sizing: border-box;
+    width:25%;
+    height:25%;
+    margin-right: 20px;  
+    padding: 10px 0px 10px 10px;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .shoe-pic-list .shoe-pic li img{
+    width:100%
+}
+.bast .shoe-session .shoe-masorry .shoe-item .price{
+    position: relative;
+    margin-bottom: 0;
+    min-height: 60px;
+    background-color: #fff;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .price>a{
+    font-size: 16px;
+    font-weight: 700;
+    color:#5b5b5b;
+    line-height: 1.4em;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .price>p>a{
+    margin-bottom:0;
+    font-size: 14px;
+    line-height: 1.5em;
+    color:#999;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .price>span{
+    position: absolute;
+    display: inline-block;
+    top:5px;
+    right:0px;
+    font-size: 18px;
+    color:#5b5b5b;
+}
+.bast .shoe-session .shoe-masorry .shoe-item .price>span>del{
+    text-decoration: line-through;
+    color:#bcbcbc;
+}
+
+/*********新闻****************/
+.news-row{
+    display:flex;
+    margin-right: -15px;
+    margin-left:-15px;
+    margin-bottom: 80px;
+  
+}
+.news-row .news-session{
+    width:33%;
+    height:400px; 
+    margin:0 10px;
+    margin-bottom: 30px;
+}
+.news-post{
+    position: relative;
+    margin-bottom: 10px;
+}
+.news-post > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.news-session img{
+    width:100%;     
+}
+.news-content{
+    margin-top:235px;   
+}
+.news-content .news-title{
+    margin-bottom: 5px;
+    display: block;
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #5b5b5b;
+    text-transform: uppercase;
+    line-height: 1.3em;
+}
+.news-content p{
+    font-size: 14px;
+    line-height: 1.8em;
+    color:#8d8d8d;;
+}
+.ml-5{
+    margin-right: 5px;
+}
+.news-post__meta>span>a{
+    margin-left: 5px;
+    color: #2AC37D;
+    font-weight: 500;
+}
+.news-morelink{
+    display: inline-block;
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
+    color: #8d8d8d;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    transition: all 0.4s ease;
+}
+/******联系我们**********/
+.home-map{
+    position:relative;
+    border:1px solid red;   
+}
+.home-map .map{
+    height:700px;
+}
+#container{
+    height:100%
+}
+.home-map .home-contact{
+    border:1px solid #2AC37D;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 60px;
+    height: 100%;
+    width: 460px;
+    padding: 50px 40px;
+    margin-left: calc((100% - 1440px) / 2);
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.home-map .home-contact> header {
+      text-align: center;
+      margin-bottom: 30px; }
+.home-map .home-contact > header h3 {
+        margin-bottom: 15px;
+        font-family: "Archivo Narrow", sans-serif;
+        font-size: 35px;
+        color: #000;
+        font-weight: 700;
+        text-transform: uppercase; }
+.home-map .home-contact > header p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        line-height: 1.57em;
+        color: #000; }
+footer{
+    display: block;
+}
+.home-map .home-contact form label {
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      color: #000;
+      font-weight: 400;
+      text-transform: uppercase; }
+.home-map .home-contact form label span {
+        margin-left: 5px; }
+.home-map .home-contact form .form-group {
+      margin-bottom: 35px; 
+}
+.map-btn{
+    margin-left:150px;
+    margin-top:-20px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border-radius: 4px;
+     outline: none;
+    border-color: #e4e4e4;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+textarea.form-control{
+    margin:auto;
+    padding:20px;
+    width:400px;
+    height:200px;
+    box-sizing: border-box;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.home-map .home-contact form .form-control {
+      color: #767779;
+      background-color: #e4e4e4;
+      border: 1px solid #e4e4e4;
+      border-radius: 0; 
+}
+.home-map .home-contact form .form-control:focus {
+        border-color: #2AC37D; 
+}
+.product-footer{
+    box-sizing: border-box;
+    /*display:flex;*/
+    background-color: #2d2a2a;
+    height: 500px;
+}
+.footer-content{
+    padding:100px 15px;
+    margin:0 auto;
+
+}
+.footer-content p{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #999;
+    font-size: 14px;
+    line-height: 1.5em;
+    margin:0 0 10px;
+}
+.d1{
+    margin-left: 20px;
+    float:left;
+    width:26%;
+    margin-bottom: 30px;
+    padding:0 10px;
+}
+.footer-logo{
+    margin-bottom: 15px;
+    max-width: 120px;
+    display:inline-block;
+}
+.footer-logo img{
+    max-width: 100%;
+}
+.footer-title h3{
+    margin-top:20px;
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.8em;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.footer-intro p strong{
+    margin-bottom:20px;
+    font-weight:700;
+}
+.second{
+    padding-top:55px;
+}
+.d1 li{
+    margin-bottom:15px;
+}
+.d1 li>a{
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.8em;
+    color: #fff;
+    text-transform: uppercase;
+}
+.three{
+    width:15%;
+}
+.four{
+    float:left;
+    width:18%;
+}
+.four li a{
+    position: relative;
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 30px;
+    color: #7d8997;
+    transition: all 0.4s ease;
+}
+.four a:before{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: #2AC37D;
+    transition: all 0.4s ease;
+}
+.four a:hover{
+    padding-left:25px;
+    color:#2ac37d;
+}
+.four a:hover:before{
+ width:20px;
+}
+.map
